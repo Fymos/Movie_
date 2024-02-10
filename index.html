@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/Logo.svg" type="image/x-icon">
+    <title>KinoGo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <h1 style="display: none">Hello World!</h1>
+
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="nav__left">
+            <div class="logo">
+              <a href="#"><img src="img/Logo.svg" alt="logo" /></a>
+              <h3>KinoGo</h3>
+            </div>
+            <div class="sort">
+              <select onchange="fnYear(value)" class="set" name="" id="">
+                <option hidden>Year</option>
+                <option value="new">New</option>
+                <option value="old">Old</option>
+              </select>
+              <select onchange="fnRaiting(value)" class="set" name="" id="">
+                <option hidden>Rating</option>
+                <option value="max">Max</option>
+                <option value="min">Min</option>
+              </select>
+              <select onchange="" class="set" name="" id="">
+                <option hidden>Category</option>
+                <option>Family</option>
+                <option>Comedy</option>
+                <option>Action</option>
+                <option>Musican</option>
+                <option>Fantasy</option>
+                <option>Fantastic</option>
+                <option>Romance</option>
+                <option>Thriller</option>
+                <option>Crime</option>
+                <option>Horror</option>
+                <option>Drama</option>
+              </select>
+            </div>
+          </div>
+          <div class="nav__right">
+            <form onsubmit="fnSearch(event)" action="">
+              <input class="search__inp" type="text" placeholder="Search" name="movieTitle"/>
+            </form>
+            
+            <button onclick="fnRenLocData()" class="btn text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-list burger__icon"></i>
+            </button>
+          </div>
+        </nav>
+        <div class="sort sort__hidden">
+          <select onchange="fnYear(value)" class="set" name="" id="">
+            <option hidden>Year</option>
+            <option value="new">New</option>
+            <option value="old">Old</option>
+          </select>
+          <select onchange="fnRaiting(value)" class="set" name="" id="">
+            <option hidden>Rating</option>
+            <option value="max">Max</option>
+            <option value="min">Min</option>
+          </select>
+          <select onchange="" class="set" name="" id="">
+            <option hidden>Category</option>
+            <option>Family</option>
+            <option>Comedy</option>
+            <option>Action</option>
+            <option>Musican</option>
+            <option>Fantasy</option>
+            <option>Fantastic</option>
+            <option>Romance</option>
+            <option>Thriller</option>
+            <option>Crime</option>
+            <option>Horror</option>
+            <option>Drama</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Favourite Movies</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <ul class="offcanvas-body favourite__movie h-100">
+        <div class="offcanvas__item">
+          <img class="ofcan__img" src="https://i.ytimg.com/vi//hq720.jpg?" alt="">
+          <p class="ms-3">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </ul>
+    </div>
+    <section class="hero p-0">
+      <div id="carouselExample" class="carousel slide p-0">
+        <div class="carousel-inner p-0">
+          <div class="carousel-item active">
+            <img src="img/slide_1.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="img/slide_2.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="img/slide_3.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="img/slide_4.png" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <div class="wrapper">
+      <div class="to__top">
+        <a href="#"><i class="bi bi-arrow-up"></i></a>
+      </div>
+    </div>
+    <section class="movies">
+      <div class="container">
+
+        <ul class="movies__list">
+          
+        </ul>
+       <!--<div class="d-flex justify-content-center mt-5">
+        <nav class="m-auto" aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <button onclick="fnPagination('prev')" class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </button>
+            </li>
+            <div class="d-flex pagination__inner">
+              
+            </div>
+            <li class="page-item">
+              <button onclick="fnPagination('next')" class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+       </div>-->
+      </div>
+          <!-- Modal -->      
+         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal__dialog">
+      
+          </div>
+        </div>
+    </section>
+
+    <!--<footer class="footer pt-3 pb-3">
+      <h4 class="text-center text__footer">© 2024 KinoGo by Fymos</h4>
+    </footer>-->
+
+
+    <script src="js/movies.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+.header {
+  z-index: 100;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  transition: .1;
+}
+.bg{
+  background: #00000048;
+  backdrop-filter: blur(100px);
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+.nav__left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  h3 {
+    margin-left: 10px;
+  }
+  img {
+    cursor: pointer;
+  }
+}
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+.burger__btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+.set {
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+.sort {
+  margin-left: 73px;
+}
+.sort__hidden {
+  display: none;
+  margin-left: 0;
+}
+select, option{
+  background: $darkblack;
+  color: #fff;
+  font-size: 20px;
+}
+.search__inp {
+  padding-left: 5px; 
+  color: #fff;
+  max-width: 261px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+}
+.search__inp::placeholder {
+  color: #fff;
+}
+.login__btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+.nav__right {
+  button {
+    margin-left: 30px;
+  }
+}
+.burger__icon{
+  margin-left: 0;
+}
+.sub__btn {
+  padding: 5px 18px;
+  border-radius: 26px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+.offcanvas{
+  bottom: 0;
+}
+.favourite__movie{
+  height: 100%;
+  img{
+    height: 80px;
+  }
+  .offcanvas__item{
+    display: flex;
+    align-items: center;
+    img{
+      cursor: pointer;
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+}
+.ofcan__img{
+  height: 60px;
+}
+@media (max-width: 975px) {
+  .sub__btn, .login__btn {
+    display: none;
+  }
+  
+}
+@media (max-width: 753px) {
+  .sort{
+    display: none;
+  }
+  .sort__hidden{
+    display: flex;
+    justify-content: end;
+    padding-bottom: 10px;   
+  }
+  .burger__btn{
+    margin-left: 0;
+  }
+  .burger__icon{
+    margin-left: 0;
+  }
+}
+@media (max-width: 686px){
+  .header {
+    padding-top: 0;
+  }
+}
+@media (max-width: 430px) {
+  .sort__hidden{
+    padding: 20px;
+  }
+  .logo{
+    display: none;
+  }
+  .header{
+    padding-top: 20px;
+  }
+  .nav__right{
+    display: flex;
+    justify-content: space-between;
+  }
+}

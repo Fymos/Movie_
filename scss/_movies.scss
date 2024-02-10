@@ -1,0 +1,155 @@
+.movies {
+  z-index: 100;
+  background: $darkblack;
+  color: #fff;
+  padding-bottom: 20px;
+}
+.movies__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.iframe {
+  width: 100%;
+  height: 262px;
+}
+.movies__card {
+  width: 220px;
+  img {
+    width: 100%;
+    border-radius: 15px ;
+    &:hover{
+      opacity: .6;
+      transform: translateY(-10px);
+    }
+  }
+  a {
+    color: $darkblack;
+  }
+  .card__info {
+    margin-top: 25px;
+    padding: 10px;
+  }
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+i::before {
+  font-size: 20px;
+  margin-top: 8px;
+}
+.movies__item {
+  margin-top: 90px;
+}
+.card__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.df {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal {
+  color: #fff;
+}
+.modal-header, .modal-body, .modal-footer {
+  background: $darkblack;
+}
+.modal__dialog{
+  max-width: 800px;
+  .iframe{
+    min-height: 440px;
+  }
+}
+.pagination{
+  --bs-pagination-border-radius: 0;
+  .page-link{
+    background-color: $darkblack;
+    color: #fff;
+  }
+}
+.wrapper{
+  transition: .5;
+}
+.to__top{
+  display: none;
+  a{
+    bottom: 40px;
+    right: 100px;
+    position: fixed;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 40px;
+    background: #ffc107;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:hover{
+    background: #906d06;
+    i::before{
+      transform: translateY(-5px);
+    }
+  }
+  i::before{
+    color: $darkblack;
+    font-size: 35px;
+    transition: .5s;
+  }
+}
+.bi{
+  transition: .5;
+}
+@media (max-width: 1540px){
+  .to__top{
+    a{
+      padding: 20px;
+      right: 50px;
+      i::before{
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 1300px){
+  .wrapper{
+    display: none;
+  }
+}
+@media (max-width: 759px) {
+  .movies{
+    padding-top: 80px;
+  }
+  .movies__card{
+    width: 100%;
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+    h4{
+      font-size: 40px;
+    }
+    i::before {
+      font-size: 30px;
+    }
+  }
+  .container{
+    padding: 0 20px;
+  }
+}
+@media (max-width: 480px) {
+  .movies__list {
+    justify-content: center;
+  }
+}
+@media (max-width: 479px) {
+  .movies__card{
+    width: 100%; 
+  }
+}
